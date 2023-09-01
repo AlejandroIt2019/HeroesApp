@@ -11,7 +11,7 @@ export const AuthProvider = ({children}) => {
     useEffect(() => {
       localStorage.setItem('keys', JSON.stringify(authState))
     }, [authState])
-    
+    sxs
     const login = (name = '') => {
         const action = {
             type: types.login,
