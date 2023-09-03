@@ -1,9 +1,14 @@
 import React, { useContext } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { authReducer } from '../../auth/context/authReducer'
+import { AuthContext } from '../../auth/context/AuthContext'
 
 export const Navbar = () => {
     const navigate = useNavigate()
+    const {logout} = useContext(AuthContext)
+    const {user} = useContext(AuthContext)
     const onLogout = () => {
+        logout()
         navigate('/login', {
             replace: true
         })
@@ -52,7 +57,7 @@ export const Navbar = () => {
                             to="/login"
 
                         >
-                            <span className='text-primary m-2'>Alejandro It</span>
+                            <span className='text-primary m-2'>{user?.name}</span>
                             <button onClick={onLogout} className='btn btn-danger'>Logout</button>
                         </NavLink>
                     </ul>

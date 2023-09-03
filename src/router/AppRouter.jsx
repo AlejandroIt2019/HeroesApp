@@ -6,16 +6,26 @@ import { Navbar } from '../uii/components/Navbar'
 import { LoginPage } from '../auth/page/LoginPage'
 import { HeroesApp } from '../HeroesApp'
 import { HeroesRoute } from '../heroes/routes/HeroesRoute'
+import { PrivateRoute } from '../heroes/routes/PrivateRoute'
+import { PublicRoute } from '../heroes/routes/PublicRoute'
 
 export const AppRouter = () => {
   return (
     <>
 
-        <Routes>  
-          <Route path='login' element={<LoginPage />} />
-          <Route path='/*' element={<HeroesRoute />} />
-        </Routes> 
-      
+      <Routes>
+
+        <Route path='/login' element={<PublicRoute>
+          <LoginPage/>
+        </PublicRoute>}/>
+
+        <Route path='/*' element={<PrivateRoute>
+          <HeroesRoute />
+        </PrivateRoute>}
+        />
+
+      </Routes>
+
     </>
   )
 }

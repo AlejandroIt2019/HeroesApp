@@ -11,7 +11,7 @@ export const HeroesRoute = () => {
         <>
             <Navbar />
             <div className="container">
-
+                
                 <Routes>
                     <Route path='dc' element={<DcPage />} />
                     <Route path='marvel' element={<MarvelPage />} />

@@ -11,7 +11,7 @@ export const AuthProvider = ({children}) => {
     useEffect(() => {
       localStorage.setItem('keys', JSON.stringify(authState))
     }, [authState])
-    sxs
+    
     const login = (name = '') => {
         const action = {
             type: types.login,
@@ -23,13 +23,12 @@ export const AuthProvider = ({children}) => {
         dispatch(action)
         
     }
-    const logout = (name = '') => {
+    const logout = () => {
+        localStorage.removeItem('keys')
         const action = {
-            type: types.logout,
-            payload: {
-                
-            }
+            type: types.logout
         }
+        dispatch(action)
         
     }
   return (
