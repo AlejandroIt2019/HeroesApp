@@ -15,12 +15,17 @@ export const LoginPage = () => {
   }
   return (
     <>
-      <div className="container">
+    <div className='page'> 
 
-        <h1>Login page</h1>
+      <div className="container">
+        <div className='text-center'>
+        <h1 className='text-white'>Login page</h1>
         <hr />
         <button onClick={onLogin} className='btn btn-primary'>Login</button>
+
+        </div>
       </div>
+    </div>
     </>
   )
 }

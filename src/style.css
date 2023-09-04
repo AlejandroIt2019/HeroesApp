@@ -1,0 +1,10 @@
+
+
+    .page {
+        background-image: url('/public/assets/heroes/thanos3.webp');
+        /* Reemplaza 'tu-imagen-de-fondo.jpg' con la URL de tu imagen de fondo */
+        background-size: cover;
+        height: 100vh;
+        /* Ajusta el tamaño de fondo según sea necesario */
+        /* Otros estilos de diseño, como colores de texto, márgenes, etc. */
+    }
